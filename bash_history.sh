@@ -1,7 +1,6 @@
 #!/bin/bash
 #This script is only for user gisadmin
 
-
 ROOT_UID=0     # Only users with $UID 0 have root privileges.
 E_NOTROOT=87   # Non-root exit error.
 
@@ -18,11 +17,9 @@ bashrc="/home/gisadmin/.bashrc"
 	-e "s|HISTFILESIZE=2000|HISTFILESIZE=|g" \
 $bashrc
 
-#echo "HISTTIMEFORMAT=\"%F %T "\" >> $bashrc
-
-string="HISTTIMEFORMAT"
-if grep -q "$string" "$bashrc" ; then
-exit
+String="HISTTIMEFORMAT"
+if grep -q "$String" "$bashrc" ; then
+	exit
 else
-echo "HISTTIMEFORMAT=\"%F %T "\" >> $bashrc
+	echo "HISTTIMEFORMAT=\"%F %T "\" >> $bashrc
 fi
