@@ -5,10 +5,10 @@
 ROOT_UID=0     # Only users with $UID 0 have root privileges.
 E_NOTROOT=87   # Non-root exit error.
 
-# Run as root, of course.
+# Run as Root or SUDO User, of course.
 if [ "$UID" -ne "$ROOT_UID" ]
 then
-  echo "Must be root to run this script."
+  echo "Must be Root or SUDO User to run this script."
   exit $E_NOTROOT
 fi
 
